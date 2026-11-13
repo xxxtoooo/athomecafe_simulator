@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Maid Name Badge</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 30px 16px;
+  background: #fff7fa;
+  color: #493b3b;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+header h1 {
+  color: #d66b9d;
+  font-size: 23px;
+  margin-bottom: 6px;
+}
+
+header p {
+  color: #a78b98;
+  font-size: 12px;
+}
+
+.container {
+  max-width: 620px;
+  margin: auto;
+}
+
+.preview {
+  background: #e7f4ef;
+  padding: 24px 10px;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 260px;
+}
+
+svg {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  overflow: visible;
+}
+
+.editor {
+  background: white;
+  padding: 22px;
+  margin-top: 22px;
+  border-radius: 16px;
+}
+
+.editor h2 {
+  color: #d66b9d;
+  font-size: 16px;
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  margin: 17px 0 7px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ead4df;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #d66b9d;
+}
+
+button {
+  width: 100%;
+  border: none;
+  background: #d66b9d;
+  color: white;
+  border-radius: 10px;
+  padding: 14px;
+  margin-top: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:active {
+  opacity: .8;
+}
+
+.note {
+  text-align: center;
+  font-size: 11px;
+  color: #ad929e;
+  margin-top: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>♡ My Maid Name Badge ♡</h1>
+  <p>お名前を入力して、オリジナル名札を作ろう</p>
+</header>
+
+<div class="container">
+
+  <!-- ネームバッジ -->
+  <div class="preview">
+
+    <svg id="badge" xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 600 340">
+
+      <!-- 白い外側 -->
+      <path
+        d="M55 155
+        L125 155
+        C115 130 130 105 157 105
+        C160 75 195 60 220 76
+        C238 39 279 38 300 65
+        C325 35 368 42 380 76
+        C415 60 450 77 450 108
+        C480 105 495 130 475 155
+        L545 155 L545 285
+        Q545 305 525 305
+        L75 305
+        Q55 305 55 285 Z"
+        fill="#fff"
+        stroke="#e9e3e4"
+        stroke-width="5"
+        stroke-linejoin="round"
+      />
+
+      <!-- 茶色の内枠 -->
+      <path
+        d="M76 170
+        L146 170
+        C142 142 160 120 183 120
+        C190 91 220 82 243 98
+        C263 62 288 63 300 85
+        C320 62 348 66 359 98
+        C389 82 418 94 420 120
+        C444 120 458 143 453 170
+        L524 170 L524 285
+        L430 285
+        M170 285 L76 285 Z"
+        fill="none"
+        stroke="#493b35"
+        stroke-width="4"
+        stroke-linejoin="round"
+      />
+
+      <!-- ピンクの丸 -->
+      <circle cx="112" cy="135" r="10" fill="#e9a0c0"/>
+      <circle cx="488" cy="135" r="10" fill="#e9a0c0"/>
+
+      <!-- 上部のロゴ風マーク -->
+      <g fill="none" stroke="#d875a3"
+         stroke-width="3" stroke-linecap="round">
+        <path d="M275 112
+        C250 92 260 75 280 79
+        C290 60 315 65 325 81
+        C344 75 354 94 330 111
+        C315 117 292 117 275 112 Z"/>
+        <path d="M276 112 Q266 125 288 119 Q296 130 302 118"/>
+        <path d="M324 112 Q336 125 314 119 Q307 130 302 118"/>
+      </g>
+
+      <text x="302" y="102"
+        text-anchor="middle"
+        fill="#d875a3"
+        font-size="29"
+        font-family="Georgia, serif"
+        font-weight="bold">at</text>
+
+      <!-- 名前 -->
+      <text id="nameText"
+        x="300" y="211"
+        text-anchor="middle"
+        fill="#171313"
+        font-size="47"
+        font-family="'Noto Sans JP', sans-serif"
+        font-weight="600">みなみ</text>
+
+      <!-- 出身地 -->
+      <text id="originText"
+        x="300" y="243"
+        text-anchor="middle"
+        fill="#393333"
+        font-size="19"
+        font-family="'Noto Sans JP', sans-serif">おおさか出身</text>
+
+      <!-- 下部の文字 -->
+      <text x="300" y="282"
+        text-anchor="middle"
+        fill="#d875a3"
+        font-size="28"
+        font-family="Georgia, serif"
+        font-weight="bold">at-home cafe</text>
+
+    </svg>
+  </div>
+
+  <!-- 編集画面 -->
+  <div class="editor">
+    <h2>♡ 名札を編集する</h2>
+
+    <label for="nameInput">メイドさんのお名前</label>
+    <input
+      id="nameInput"
+      type="text"
+      maxlength="12"
+      value="みなみ"
+      placeholder="例：みなみ"
+    >
+
+    <label for="originInput">出身地</label>
+    <input
+      id="originInput"
+      type="text"
+      maxlength="20"
+      value="おおさか出身"
+      placeholder="例：おおさか出身"
+    >
+
+    <button onclick="downloadBadge()">
+      ♡ PNG画像を保存する
+    </button>
+
+    <p class="note">
+      入力した文字はリアルタイムで反映されます ♡
+    </p>
+  </div>
+
+</div>
+
+<script>
+const nameInput = document.getElementById("nameInput");
+const originInput = document.getElementById("originInput");
+
+const nameText = document.getElementById("nameText");
+const originText = document.getElementById("originText");
+
+// 文字数に合わせて名前の大きさを調整
+function updateBadge() {
+  const name = nameInput.value || " ";
+  const origin = originInput.value || " ";
+
+  nameText.textContent = name;
+  originText.textContent = origin;
+
+  let size = 47;
+
+  if (name.length >= 5) size = 39;
+  if (name.length >= 7) size = 32;
+  if (name.length >= 9) size = 26;
+
+  nameText.setAttribute("font-size", size);
+}
+
+nameInput.addEventListener("input", updateBadge);
+originInput.addEventListener("input", updateBadge);
+
+// PNG保存
+function downloadBadge() {
+  const svg = document.getElementById("badge");
+  const clone = svg.cloneNode(true);
+
+  clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+
+  const svgData = new XMLSerializer().serializeToString(clone);
+  const blob = new Blob(
+    [svgData],
+    { type: "image/svg+xml;charset=utf-8" }
+  );
+
+  const url = URL.createObjectURL(blob);
+  const img = new Image();
+
+  img.onload = function() {
+    const canvas = document.createElement("canvas");
+    canvas.width = 1200;
+    canvas.height = 680;
+
+    const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "#ffffff";
+    ctx.fillRect(0, 0, 1200, 680);
+    ctx.drawImage(img, 0, 0, 1200, 680);
+
+    const link = document.createElement("a");
+    link.download = "my-maid-name-badge.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+
+    URL.revokeObjectURL(url);
+  };
+
+  img.onerror = function() {
+    URL.revokeObjectURL(url);
+    alert("画像を保存できませんでした。もう一度お試しください。");
+  };
+
+  img.src = url;
+}
+
+updateBadge();
+</script>
+
+</body>
+</html>
