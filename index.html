@@ -4,101 +4,128 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Maid Name Badge</title>
+<title>My Maid Name Badge ♡</title>
+
+<!-- 丸ゴシック系フォント -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
 
 <style>
+:root {
+  --pink: #d96d9e;
+  --light-pink: #f5b4d0;
+  --dark: #493b36;
+  --background: #fff7fa;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  padding: 30px 16px;
-  background: #fff7fa;
-  color: #493b3b;
-  font-family: "Noto Sans JP", sans-serif;
+  padding: 34px 16px 50px;
+  background: var(--background);
+  color: var(--dark);
+  font-family:
+    "Hiragino Maru Gothic ProN",
+    "Hiragino Maru Gothic Pro",
+    "M PLUS Rounded 1c",
+    sans-serif;
 }
 
 header {
   text-align: center;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
 }
 
 header h1 {
-  color: #d66b9d;
-  font-size: 23px;
-  margin-bottom: 6px;
+  color: var(--pink);
+  font-size: 25px;
+  font-weight: 800;
+  margin: 0;
 }
 
 header p {
-  color: #a78b98;
-  font-size: 12px;
+  color: #b59ba7;
+  font-size: 13px;
+  margin-top: 12px;
 }
 
 .container {
-  max-width: 620px;
+  max-width: 720px;
   margin: auto;
 }
 
+/* プレビュー */
 .preview {
-  background: #e7f4ef;
-  padding: 24px 10px;
-  border-radius: 16px;
+  background: #e6f3ee;
+  padding: 35px 12px;
+  border-radius: 20px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  min-height: 260px;
+  justify-content: center;
+  min-height: 300px;
 }
 
 svg {
+  display: block;
   width: 100%;
-  max-width: 550px;
+  max-width: 590px;
   height: auto;
   overflow: visible;
 }
 
+/* 編集エリア */
 .editor {
-  background: white;
-  padding: 22px;
-  margin-top: 22px;
-  border-radius: 16px;
+  background: #fff;
+  padding: 25px;
+  margin-top: 25px;
+  border-radius: 20px;
 }
 
 .editor h2 {
-  color: #d66b9d;
-  font-size: 16px;
-  margin-top: 0;
+  color: var(--pink);
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 22px;
 }
 
 label {
   display: block;
-  font-size: 13px;
-  margin: 17px 0 7px;
+  font-size: 14px;
+  font-weight: 700;
+  margin: 18px 0 8px;
 }
 
 input {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ead4df;
-  border-radius: 8px;
+  padding: 14px;
+  border: 1px solid #efd5e0;
+  border-radius: 11px;
+  background: #fffdfd;
+  font-family: inherit;
   font-size: 16px;
   outline: none;
 }
 
 input:focus {
-  border-color: #d66b9d;
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px #fce9f1;
 }
 
 button {
   width: 100%;
+  margin-top: 24px;
+  padding: 15px;
   border: none;
-  background: #d66b9d;
+  border-radius: 12px;
+  background: var(--pink);
   color: white;
-  border-radius: 10px;
-  padding: 14px;
-  margin-top: 20px;
-  font-size: 15px;
-  font-weight: bold;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 800;
   cursor: pointer;
 }
 
@@ -108,9 +135,28 @@ button:active {
 
 .note {
   text-align: center;
-  font-size: 11px;
-  color: #ad929e;
-  margin-top: 18px;
+  color: #b49aa5;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 25px 12px;
+  }
+
+  header h1 {
+    font-size: 21px;
+  }
+
+  .preview {
+    padding: 20px 5px;
+    min-height: 210px;
+  }
+
+  .editor {
+    padding: 20px;
+  }
 }
 </style>
 </head>
@@ -124,68 +170,95 @@ button:active {
 
 <div class="container">
 
-  <!-- ネームバッジ -->
+  <!-- 名札プレビュー -->
   <div class="preview">
 
-    <svg id="badge" xmlns="http://www.w3.org/2000/svg"
-         viewBox="0 0 600 340">
+    <svg id="badge"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 600 340">
 
-      <!-- 白い外側 -->
+      <!-- 外側の白いプレート -->
       <path
-        d="M55 155
-        L125 155
-        C115 130 130 105 157 105
-        C160 75 195 60 220 76
-        C238 39 279 38 300 65
-        C325 35 368 42 380 76
-        C415 60 450 77 450 108
-        C480 105 495 130 475 155
-        L545 155 L545 285
-        Q545 305 525 305
-        L75 305
-        Q55 305 55 285 Z"
-        fill="#fff"
-        stroke="#e9e3e4"
+        d="
+        M55 155
+        L120 155
+        C105 130 119 105 148 105
+        C151 73 190 57 220 76
+        C238 37 278 39 300 66
+        C325 37 365 39 380 76
+        C410 57 449 73 452 105
+        C481 105 495 130 480 155
+        L545 155
+        L545 285
+        Q545 307 523 307
+        L77 307
+        Q55 307 55 285
+        Z
+        "
+        fill="#ffffff"
+        stroke="#e9e2e4"
         stroke-width="5"
         stroke-linejoin="round"
       />
 
-      <!-- 茶色の内枠 -->
+      <!-- 内側の茶色い枠線 -->
       <path
-        d="M76 170
+        d="
+        M76 285
+        L76 170
         L146 170
-        C142 142 160 120 183 120
-        C190 91 220 82 243 98
-        C263 62 288 63 300 85
-        C320 62 348 66 359 98
-        C389 82 418 94 420 120
-        C444 120 458 143 453 170
-        L524 170 L524 285
-        L430 285
-        M170 285 L76 285 Z"
+
+        C139 142 158 119 183 120
+        C188 91 220 82 243 98
+        C260 64 286 64 300 85
+        C318 64 346 64 359 98
+        C382 82 414 91 418 120
+        C443 119 461 142 454 170
+
+        L524 170
+        L524 285
+        L423 285
+
+        M177 285
+        L76 285
+        "
         fill="none"
-        stroke="#493b35"
+        stroke="#493b36"
         stroke-width="4"
+        stroke-linecap="round"
         stroke-linejoin="round"
       />
 
-      <!-- ピンクの丸 -->
-      <circle cx="112" cy="135" r="10" fill="#e9a0c0"/>
-      <circle cx="488" cy="135" r="10" fill="#e9a0c0"/>
+      <!-- 左右のピンクの丸 -->
+      <circle cx="112" cy="135" r="10" fill="#eca1c0"/>
+      <circle cx="488" cy="135" r="10" fill="#eca1c0"/>
 
-      <!-- 上部のロゴ風マーク -->
-      <g fill="none" stroke="#d875a3"
-         stroke-width="3" stroke-linecap="round">
-        <path d="M275 112
-        C250 92 260 75 280 79
-        C290 60 315 65 325 81
-        C344 75 354 94 330 111
-        C315 117 292 117 275 112 Z"/>
-        <path d="M276 112 Q266 125 288 119 Q296 130 302 118"/>
-        <path d="M324 112 Q336 125 314 119 Q307 130 302 118"/>
+      <!-- 上部のピンクのロゴ風マーク -->
+      <g stroke="#d875a3"
+         stroke-width="3"
+         fill="none"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+
+        <path d="
+        M278 112
+        C255 99 258 78 276 77
+        C286 61 304 68 310 79
+        C327 65 348 80 342 98
+        C338 111 323 116 310 119
+        Z
+        "/>
+
+        <path d="
+        M280 112
+        Q269 124 291 119
+        Q297 131 304 119
+        Q313 131 319 119
+        Q337 124 330 112
+        "/>
       </g>
 
-      <text x="302" y="102"
+      <text x="300" y="105"
         text-anchor="middle"
         fill="#d875a3"
         font-size="29"
@@ -194,34 +267,41 @@ button:active {
 
       <!-- 名前 -->
       <text id="nameText"
-        x="300" y="211"
+        x="300"
+        y="211"
         text-anchor="middle"
+        dominant-baseline="auto"
         fill="#171313"
-        font-size="47"
-        font-family="'Noto Sans JP', sans-serif"
-        font-weight="600">みなみ</text>
+        font-size="46"
+        font-family="'Hiragino Maru Gothic ProN', 'Hiragino Maru Gothic Pro', 'M PLUS Rounded 1c', sans-serif"
+        font-weight="800">みなみ</text>
 
       <!-- 出身地 -->
       <text id="originText"
-        x="300" y="243"
+        x="300"
+        y="244"
         text-anchor="middle"
         fill="#393333"
         font-size="19"
-        font-family="'Noto Sans JP', sans-serif">おおさか出身</text>
+        font-family="'Hiragino Maru Gothic ProN', 'Hiragino Maru Gothic Pro', 'M PLUS Rounded 1c', sans-serif"
+        font-weight="500">おおさか出身</text>
 
-      <!-- 下部の文字 -->
-      <text x="300" y="282"
+      <!-- 下部ロゴ -->
+      <text x="300"
+        y="282"
         text-anchor="middle"
         fill="#d875a3"
-        font-size="28"
+        font-size="27"
         font-family="Georgia, serif"
         font-weight="bold">at-home cafe</text>
 
     </svg>
+
   </div>
 
   <!-- 編集画面 -->
   <div class="editor">
+
     <h2>♡ 名札を編集する</h2>
 
     <label for="nameInput">メイドさんのお名前</label>
@@ -242,13 +322,14 @@ button:active {
       placeholder="例：おおさか出身"
     >
 
-    <button onclick="downloadBadge()">
+    <button id="saveButton">
       ♡ PNG画像を保存する
     </button>
 
     <p class="note">
       入力した文字はリアルタイムで反映されます ♡
     </p>
+
   </div>
 
 </div>
@@ -260,21 +341,31 @@ const originInput = document.getElementById("originInput");
 const nameText = document.getElementById("nameText");
 const originText = document.getElementById("originText");
 
-// 文字数に合わせて名前の大きさを調整
 function updateBadge() {
+
   const name = nameInput.value || " ";
   const origin = originInput.value || " ";
 
   nameText.textContent = name;
   originText.textContent = origin;
 
-  let size = 47;
+  // 名前の文字数に合わせて調整
+  let size = 46;
 
   if (name.length >= 5) size = 39;
-  if (name.length >= 7) size = 32;
-  if (name.length >= 9) size = 26;
+  if (name.length >= 7) size = 33;
+  if (name.length >= 9) size = 27;
+  if (name.length >= 11) size = 23;
 
   nameText.setAttribute("font-size", size);
+
+  // 出身地も長さに応じて調整
+  let originSize = 19;
+
+  if (origin.length >= 11) originSize = 16;
+  if (origin.length >= 15) originSize = 13;
+
+  originText.setAttribute("font-size", originSize);
 }
 
 nameInput.addEventListener("input", updateBadge);
@@ -282,45 +373,66 @@ originInput.addEventListener("input", updateBadge);
 
 // PNG保存
 function downloadBadge() {
+
   const svg = document.getElementById("badge");
   const clone = svg.cloneNode(true);
 
   clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
 
-  const svgData = new XMLSerializer().serializeToString(clone);
-  const blob = new Blob(
-    [svgData],
-    { type: "image/svg+xml;charset=utf-8" }
-  );
+  // 外部フォントの読み込みを待つ
+  const save = () => {
 
-  const url = URL.createObjectURL(blob);
-  const img = new Image();
+    const svgData = new XMLSerializer()
+      .serializeToString(clone);
 
-  img.onload = function() {
-    const canvas = document.createElement("canvas");
-    canvas.width = 1200;
-    canvas.height = 680;
+    const blob = new Blob(
+      [svgData],
+      { type: "image/svg+xml;charset=utf-8" }
+    );
 
-    const ctx = canvas.getContext("2d");
-    ctx.fillStyle = "#ffffff";
-    ctx.fillRect(0, 0, 1200, 680);
-    ctx.drawImage(img, 0, 0, 1200, 680);
+    const url = URL.createObjectURL(blob);
+    const img = new Image();
 
-    const link = document.createElement("a");
-    link.download = "my-maid-name-badge.png";
-    link.href = canvas.toDataURL("image/png");
-    link.click();
+    img.onload = function() {
 
-    URL.revokeObjectURL(url);
+      const canvas = document.createElement("canvas");
+
+      canvas.width = 1200;
+      canvas.height = 680;
+
+      const ctx = canvas.getContext("2d");
+
+      ctx.fillStyle = "#ffffff";
+      ctx.fillRect(0, 0, 1200, 680);
+
+      ctx.drawImage(img, 0, 0, 1200, 680);
+
+      const link = document.createElement("a");
+
+      link.download = "my-maid-name-badge.png";
+      link.href = canvas.toDataURL("image/png");
+      link.click();
+
+      URL.revokeObjectURL(url);
+    };
+
+    img.onerror = function() {
+      URL.revokeObjectURL(url);
+      alert("画像を保存できませんでした。");
+    };
+
+    img.src = url;
   };
 
-  img.onerror = function() {
-    URL.revokeObjectURL(url);
-    alert("画像を保存できませんでした。もう一度お試しください。");
-  };
-
-  img.src = url;
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(save);
+  } else {
+    save();
+  }
 }
+
+document.getElementById("saveButton")
+  .addEventListener("click", downloadBadge);
 
 updateBadge();
 </script>
